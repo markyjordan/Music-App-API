@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jordmark | Music App API</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="login-card-container">
+      <div class="text-box">
+        <h1>Mark Jordan's Music App API</h1>
+        <p>
+          By clicking the button below, you will be redirected to sign-in with
+          your Google account or create a new one, and the permission to access
+          your name, email address, and profile will be requested. You will then
+          be redirected to another page where your name and email will be
+          displayed along with the JWT that was just generated for your current
+          session.
+        </p>
+      </div> 
+    </div>
+    <div class="button-box" id="google-signin-button"></div>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT: " + response.credential);
+
+        // Send the ID token to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/connect");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onload = function() {
+          console.log("Signed-in user: " + xhr.responseText);
+          
+          // Redirect to the page that displays the JWT
+          if (xhr.responseText === "success") {
+            location.assign('/user-profile');
+          }
+        };
+        xhr.send(JSON.stringify({ id_token: response.credential }));
+      }
+      window.onload = function() {
+        google.accounts.id.initialize({
+          client_id: "482667228483-chgqkssr58gbarip8g9df2bg8b0601jh.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("google-signin-button"),
+          { theme: "outline", size: "large" }  // customization attributes
+        );
+      }
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </body>
+</html>

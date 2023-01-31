@@ -1,0 +1,38 @@
+.login-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-container div {
+    padding: 10px;
+    align-items: center;
+    width: 33.33%
+}
+
+.profile-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card-container div {
+    padding: 10px;
+    align-items: center;
+    width: 33.33%
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

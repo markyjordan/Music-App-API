@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css" /> -->
+    <title>jordmark | User Profile & JWT</title>
+  </head>
+  <body>
+    <div class="profile-card-container">
+      <div class="text-box">
+        <h1> Hi, <%= user.name %>!</h1>
+        <p>You successfully signed-in to your Google account: <%= user.email
+        %><br><br>The JWT generated for your session:<br><%=
+        user.jwt_encoded %><br><br>The decoded JWT generated for your session:
+        <br><%= user.jwt_decoded %> <br><br>The value of the decoded JWT's 'sub'
+        property (the user's unique id): <%= user.sub %><br><br></p>
+      </div>
+      <a href="/logout">Logout</a>
+      <p>***Logging out clears from your browser the cookie containing the JWT
+      for your session. The cookie can be viewed in the developer console.***</p>
+    </div>
+  </body>
+</html>

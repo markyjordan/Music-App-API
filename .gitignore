@@ -1,0 +1,8 @@
+# Node
+node_modules
+.env
+
+# GCP Credentials
+/Users/marky/Desktop/치아씨/school/OSU/courses/2022/fall/CS-493/assignments/jordmark-music-app-api/jordmark_music-app-api/client_secret_482667228483-chgqkssr58gbarip8g9df2bg8b0601jh.apps.googleusercontent.com.json
+
+/Users/marky/Desktop/치아씨/school/OSU/courses/2022/fall/CS-493/assignments/jordmark-music-app-api/jordmark_music-app-api/jordmark-music-app-api-e3e886d76e07.json
