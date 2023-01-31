@@ -2,10 +2,6 @@
 
 ```
 Author: Mark Jordan
-Course: OSU CS493 - Cloud Application Development
-Instructors: N. Chaudhry, S. Hedaoo
-Assignment: Portfolio Project
-Due: 2022-12-04
 Description: A RESTful web API that serves JSON metadata for a simulated music player web application.
 ```
 
