@@ -1299,38 +1299,7 @@ DELETE /playlists
 
 
 ---
-## Partial Credit Explanations
 
-### Pagination
-
-I intended to meet this requirement by adding paging for each collection
-endpoint, including a link to the next page and a property that expressed the
-total amount of entities in the collection. The logic for this implementation
-would be included in the endpoints for each entity collection.
-
-I initially tried implementing manual paging using cursor tokens with the
-node snippet of a function entitled runPageQuery provided in the google cloud
-docs:
-https://cloud.google.com/datastore/docs/samples/datastore-cursor-paging. Though
-the code snippet appears to return a tuple containing a paginated datastore
-collection in index 0 and info about the dataset in index 1, I couldn't seem to
-return that specific object nor one similar with data I could parse. I verified
-that the object wasn't being returned as expected by logging the result every
-time I ran a request. Next, I tried implementing an entirely different method to
-query and paginate the collection which was to construct a custom middleware to
-handle a query using an offset and limit parameters to retrieve a maximum of
-five entities, but unfortunately I couldn't get that to work either. 
-    
-Each time I tried implementing pagination, requests to my endpoint would also
-return a custom internal server error in the .catch block of the function so I
-suspect the implementation I wrote either has an issue with either the validity
-of the page cursor token I am passing to the runPageQuery function, the way I
-am computing the next link using the cursor token, or a silly syntax issue, akin
-to a missing semi-colon, that I am overlooking, like the manner in which I am
-assigning the total_items property to the response object. 
-
-
----
 <br>
 
 [Return to the Top](#music-app-api)
