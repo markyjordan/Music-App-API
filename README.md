@@ -5,13 +5,6 @@ Author: Mark Jordan
 Description: A RESTful web API that serves JSON metadata for a simulated music player web application.
 ```
 
-
----
-## App URL
-
-[https://jordmark-music-app-api.wl.r.appspot.com](https://jordmark-music-app-api.wl.r.appspot.com)
-
-
 ---
 ## Table of Contents
 
